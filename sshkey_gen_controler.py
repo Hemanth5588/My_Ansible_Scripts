@@ -1,8 +1,8 @@
 import os
 import paramiko
 import getpass
-
-# List of remote servers
+# Run this python script in controller(master) vm
+# List of remote servers (slaves vms)
 REMOTE_SERVERS = [
     {"host": "13.93.235.17", "user": "azureuser"},
     {"host": "40.85.159.145", "user": "azureuser"},
