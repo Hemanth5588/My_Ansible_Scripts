@@ -1,0 +1,39 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliQIT Login</title>
+	<style>
+	    body
+		{
+	           background-image: url('image1.jpg');
+        }       
+    </style>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if(username && password) {
+                localStorage.setItem("username", username);
+                window.location.href = "home.html";
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+    </script>
+</head>
+<body>
+	
+	<h1>Welcome to IntelliQIT</h1>
+	<h2>Login</h2>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required><br><br>
+		<button onclick="login()">Login</button>
+</body>
+</html>
