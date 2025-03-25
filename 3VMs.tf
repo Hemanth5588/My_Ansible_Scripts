@@ -4,7 +4,7 @@
    required_providers {
      azurerm = {
        source  = "hashicorp/azurerm"
-       version = "=4.1.0"
+       version = "<4.1.0"
      }
    }
  }
@@ -100,7 +100,7 @@ resource "azurerm_linux_virtual_machine" "ansible_vms" {
   name                = "ansible-${count.index}"
   network_interface_ids = [azurerm_network_interface.my_nic[count.index].id]
   resource_group_name = azurerm_resource_group.ansible_project1.name
-  size                = "Standard_B1ms"
+  size                = "Standard_B2s"   #"Standard_B1ms"
   count = 3
 
   admin_ssh_key {
@@ -114,9 +114,9 @@ resource "azurerm_linux_virtual_machine" "ansible_vms" {
   }
 
   source_image_reference {
-    offer     = "UbuntuServer"
+    offer     = "0001-com-ubuntu-server-focal"     #"UbuntuServer"
     publisher = "Canonical"
-    sku       = "18.04-LTS"
+    sku       = "20_04-lts"   # "18.04-LTS"
     version   = "latest"
   }
 }
